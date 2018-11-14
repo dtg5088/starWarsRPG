@@ -1,0 +1,48 @@
+.jumbotron {
+    color: lightgray;
+    background-color: black;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 20px;
+    padding: 20px 0px 0px 0px;
+    text-align: center;
+    border-bottom: solid darkgrey 5px;
+    
+}
+.jumbotronSub {
+    color: white;
+    background-color: black;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 40px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.characterBox{
+    background-color: white;
+    border: solid darkgrey;
+    height: auto;
+    width: 15%;
+    margin: 10px;
+    overflow: hidden;
+    color: black;
+}
+
+.characterImg {
+    float: left;
+    border-bottom: solid black 3px;
+}
+
+.container {
+    background-color: black;
+    max-width: 100%;
+}
+
+.hero {
+    background-color: rgb(23, 11, 88);
+    color: lightgrey;
+}
+
+.villan {
+    background-color: rgb(71, 4, 4);
+    color: lightgrey;
+}
