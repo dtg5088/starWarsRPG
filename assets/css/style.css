@@ -6,8 +6,12 @@
     padding: 20px 0px 0px 0px;
     text-align: center;
     border-bottom: solid darkgrey 5px;
+    background-image: url("../images/mainImgTag.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
     
 }
+
 .jumbotronSub {
     color: white;
     background-color: black;
@@ -15,10 +19,27 @@
     font-size: 40px;
     padding: 0px 0px 0px 0px;
     text-align: center;
+    opacity: 0.4;
+
+}
+
+.titleTagHero{
+    background-color: rgb(23, 5, 88);
+    padding: 3px;
+    margin-top: 20px;
+    color: lightgray;
+}
+.titleTagVillan{
+    background-color: rgb(88, 5, 5);
+    padding: 3px;
+    margin-top: 20px;
+    width: 100%;
+    color: lightgray;
+    
 }
 
 .characterBox{
-    background-color: white;
+    background-color: lightgray;
     border: solid darkgrey;
     height: auto;
     width: 15%;
@@ -26,23 +47,63 @@
     overflow: hidden;
     color: black;
 }
+.chosenCharacterBoxH{
+    background-color: lightgray;
+    border: solid darkgrey;
+    height: auto;
+    width: 80%;
+    margin: 10px;
+    overflow: hidden;
+    color: black;
+    float: right;
+}
 
 .characterImg {
     float: left;
     border-bottom: solid black 3px;
 }
 
-.container {
+.container-fluidT {
     background-color: black;
-    max-width: 100%;
+    /*max-width: 100%;*/
+}
+.container-fluid {
+    background-color: black;
+    /*max-width: 100%;*/
 }
 
 .hero {
-    background-color: rgb(23, 11, 88);
+    /*background-color: rgb(23, 11, 88);*/
     color: lightgrey;
+    opacity: 0.9;
+    float: right
 }
 
 .villan {
-    background-color: rgb(71, 4, 4);
+    /*background-color: rgb(71, 4, 4);*/
     color: lightgrey;
+    opacity: 0.9;
+    float: left;
+}
+
+.bodyImg{
+    height: auto;
+    width: 100%;
+    background-image: url("../images/venue1.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.vs{
+    background-image: url("../images/vs2.png");
+    background-size: 200% 100%;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+}
+
+.attackbutton {
+    position: absolute;
+    top: 250px;
+    right: 30px;
 }

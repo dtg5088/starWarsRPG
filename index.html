@@ -13,67 +13,168 @@
 </head>
 <body>
     <div class="jumbotron">
-        <p class="jumbotronSub">Star Wars</p>
+        <p class="jumbotronSub"><img src="assets/images/StarWars.jpg" alt="" style="height: 200px;"></p>
         <p class="jumbotronSub1">RPG Game</p>
     </div>
-    <h2>Pick a character</h2>
-    <div class="row container">
-        <!-- Mace Windu Charachter-->
-        <div id="character1" class="characterBox character">
-            <div class="characterImg">
-                <img src="assets/images/maceWindu.jpg" style="height: auto; width: 100%;" alt="">
+    <div class="titleTagHero"> <h2>Chose Your Character</h2> </div>
+    <div class="container-fluid">
+        <div class="row container-fluidT" >
+            <!-- Mace Windu Charachter-->
+            <div id="1" class="characterBox heroCharacter">
+                <div class="characterImg">
+                    <img src="assets/images/maceWindu.jpg" style="height: auto; width: 100%;" alt="">
+                </div>
+                <h5>Character: <br> <span id="char1"></span></h5>
+                <h5>Health: <span id="health1" class="health"></span></h5>
+                <h5>Attack power: <span id="charPower1"></span></h5>
             </div>
-            <h5>Character:<span id="char1"></span></h5>
-            <h5>Health:<span id="char1Health"></span></h5>
-            <h5>Attack power:<span id="char1AttackPower"></span></h5>
+
+            <!-- Obiwan Kanobi Charachter-->
+            <div id="3" class="characterBox heroCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/obiWan.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char3"></span></h5>
+                    <h5>Health: <span id="health3" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower3"></span></h5>
+                </div>
+
+            <!-- Luke Skywalker Charachter-->
+            <div id="5" class="characterBox heroCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/lukeSkywalker.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char5"></span></h5>
+                    <h5>Health: <span id="health5" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower5"></span></h5>
+            </div>
+
+            <!-- Yoda Charachter-->
+            <div id="7" class="characterBox heroCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/yoda.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char7"></span></h5>
+                    <h5>Health: <span id="health7" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower7"></span></h5>
+            </div>
+
+             <!-- Rey Charachter-->
+             <div id="9" class="characterBox heroCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/rey.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char9"></span></h5>
+                    <h5>Health: <span id="health9" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower9"></span></h5>
+            </div>
+
+             <!-- Asoka Charachter-->
+             <div id="11" class="characterBox heroCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/Ahsoka.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char11"></span></h5>
+                    <h5>Health: <span id="health11" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower11"></span></h5>
+            </div>
+
         </div>
-        
-        <!-- Stroom Troopers Charachter-->
-        <div id="character2" class="characterBox character">
-                <div class="characterImg">
-                    <img src="assets/images/stormTroops.jpg" style="height: auto; width: 100%;" alt="">
-                </div>
-                <h5>Character:<span id="char2"></span></h5>
-                <h5>Health:<span id="char2Health"></span></h5>
-                <h5>Attack power:<span id="char2AttackPower"></span></h5>
+
+        <!--    //////////     DARKSIDE CHARACTERS    ////////////     -->
+        <div class="titleTagVillan"> <h2>Pick an Opponent </h2> </div>
+        <div class="row container-fluidT" >
+            <!-- Stroom Troopers Charachter-->
+            <div id="2" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/stormTroops.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char2"></span></h5>
+                    <h5>Health: <span id="health2" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower2"></span></h5>
+            </div>
+            
+            <!-- Darth Vader Charachter-->
+            <div id="4" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/darthVader.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char4"></span></h5>
+                    <h5>Health: <span id="health4" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower4"></span></h5>
             </div>
 
-         <!-- Obiwan Kanobi Charachter-->
-         <div id="character3" class="characterBox character">
-                <div class="characterImg">
-                    <img src="assets/images/obiWan.jpg" style="height: auto; width: 100%;" alt="">
-                </div>
-                <h5>Character:<span id="char3"></span></h5>
-                <h5>Health:<span id="char3Health"></span></h5>
-                <h5>Attack power:<span id="char3AttackPower"></span></h5>
+            <!-- KyloRen Charachter-->
+            <div id="6" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/kyloRen.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char6"></span></h5>
+                    <h5>Health: <span id="health6" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower6"></span></h5>
             </div>
 
-         <!-- Darth Vader Charachter-->
-         <div id="character4" class="characterBox character">
-                <div class="characterImg">
-                    <img src="assets/images/darthVader.jpg" style="height: auto; width: 100%;" alt="">
-                </div>
-                <h5>Character:<span id="char4"></span></h5>
-                <h5>Health:<span id="char4Health"></span></h5>
-                <h5>Attack power:<span id="char4AttackPower"></span></h5>
+             <!-- Sheev Palpatine Charachter-->
+             <div id="8" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/darthSidious.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char8"></span></h5>
+                    <h5>Health: <span id="health8" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower8"></span></h5>
             </div>
-    </div>
+
+             <!-- Asajj Ventress Charachter-->
+             <div id="10" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/asajjVentress.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char10"></span></h5>
+                    <h5>Health: <span id="health10" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower10"></span></h5>
+            </div>
+
+            <!-- Darth Maul Charachter-->
+            <div id="12" class="characterBox villanCharacter">
+                    <div class="characterImg">
+                        <img src="assets/images/darthMaul.jpg" style="height: auto; width: 100%;" alt="">
+                    </div>
+                    <h5>Character: <br> <span id="char12"></span></h5>
+                    <h5>Health: <span id="health12" class="health"></span></h5>
+                    <h5>Attack power: <span id="charPower12"></span></h5>
+            </div>
+
+        </div>
     
+    <div class="bodyImg">
     <div class="row">
         
-            <div class="col-md-5 hero">
-                <h2 style="text-align: center;">HERO</h2>
-                <div id="chosenCharacter" style="max-width: 100%;"></div>
+            <div class="col-md-5 hero" style="max-height: 80%;">
+                <h2 style="text-align: center; background-color: rgb(18, 2, 88)">HERO</h2>
+                <div id="chosenCharacter" style="max-width: 100%;  max-height: 80%;">
+                     <!-- copying information from the character you chose-->
+                    <div class="chosenCharacterBoxH">
+                        <div class="characterImg">
+                            <img id="chosenImg" src="assets/images/jediOrder.png" style="height: auto; width: 100%;" >
+                        </div>
+                            <h5><span id="charChosen"></span></h5>
+                            <h5><span id="healthChosen"></span></h5>
+                            <h5><span id="charPowerChosen"></span></h5>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                    <h2 style="text-align: center;">V.S</h2>
+            <div class="col-md-2 vs">
+                    <h2 style="text-align: center;"></h2>
+                    <button id="attackButton">Attack</button>
                     
             </div>
             <div class="col-md-5 villan">
-                <h2 style="text-align: center;">DEFENDER</h2>
+                <h2 style="text-align: center; background-color: rgb(88, 2, 2)">DEFENDER</h2>
                 <div id="defenderCharacter" style="max-width: 100%;"></div>
             </div>
+        </div>
     </div>
+</div>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
