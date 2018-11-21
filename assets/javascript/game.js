@@ -32,74 +32,75 @@ $(document).ready(function() {
     
         1: {
             name: "Mace Windu",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 100,
             image:"assets/images/maceWindu.jpg",
         },
         2: {
             name: "Storm Troopers",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 90,
             image:"assets/images/stormTroops.jpg",
+            imagelose: "assets/images/stormTroops.jpg"
         },
         3: {
             name: "Obi Wan Kanobi",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 100,
             image:"assets/images/obiWan.jpg",
         },
         4: {
             name: "Darth Vader",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 339,
             image:"assets/images/darthVader.jpg",
         },
         5:  {
             name: "Luke Skywalker",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 100,
             image:"assets/images/lukeSkywalker.jpg" ,
         },
         6:  {
             name: "Kylo Ren",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 150,
             image:"assets/images/kyloRen.jpg",
         },
         7:  {
             name: "Yoda",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 100,
             image:"assets/images/yoda.jpg",
         },
         8:  {
             name: "Darth Sidious",
-            health: 100,
-            attackPower: 30,
+            health: 2000,
+            attackPower: 290,
             image:"assets/images/darthSidious.jpg",
         },
         9:  {
             name: "Rey",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 100,
             image:"assets/images/rey.jpg",
         },
         10: {
             name: "Asajj Ventress",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 210,
             image:"assets/images/asajjVentress.jpg",
         },
         11: {
             name: "Asoka Tano",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 300,
             image:"assets/images/Ahsoka.jpg",
         },
         12: {
             name: "Darth Maul",
-            health: 100,
-            attackPower: 30,
+            health: 1500,
+            attackPower: 275,
             image: "assets/images/darthMaul.jpg"
         }
     }
@@ -147,10 +148,6 @@ $(document).ready(function() {
         $("#charPower11").append(characters[11].attackPower);
         $("#charPower12").append(characters[12].attackPower);
 
-
-
-
-
     // calling functions 
     pickCharacter();
     
@@ -167,6 +164,9 @@ function pickCharacter(){
     var defImage;
     var isClicked = true;
     var isClicked2 = true;
+    var attack = true
+    var threshHold = 1;
+    var win = true;
     
 
         $('.heroCharacter').click(function(){
@@ -210,36 +210,70 @@ function pickCharacter(){
                         defName = characters[pickedDefCharacter].name;
                         defHealth = characters[pickedDefCharacter].health;
                         defattack = characters[pickedDefCharacter].attackPower;
-                        defattack = characters[pickedDefCharacter].attackPower;
+                        var src = characters[pickedDefCharacter].image
+                        defImage = $("#chosenImgV").attr('src', src); 
+                        
+
+                        //appending the chosen charater to the DOM
+                        $("#chosenImgV").append(defImage);
+                        $("#charChosenV").append("Character: "+defName);
+                        $("#healthChosenV").append("Health: "+defHealth);
+                        $("#charPowerChosenV").append("Attack Power: "+defattack);
 
                         console.log("chosen Defender is: "+defName);
-                        defenderCharacter.append(this);
-
+                        //defenderCharacter.append(this);
+                        
+                        attack = true; //tells attack button to work again
                         isClicked2 = false;
+                        win = true;
+
                 }
                 //return [pickedDefCharacter, defName, defHealth, defattack];
             });
             
-        hitCounter();
+        if(win){
+        hitCounter();  
+        } 
 
         function hitCounter(){
-            $( "#attackButton" ).click(function(){
-                console.log("this is the opponents current health value "+ defHealth);
-                defHealth = defHealth - Heroattack;
-                console.log("this your characters power value "+Heroattack);
-                console.log("this is the opponents health value "+defHealth);
 
-                //I have to send the new information to the DOM, but how do I attach it there:
-                //      1. How do I attach the health 
+           
 
-            });
+            if (attack){
+                $( "#attackButton" ).click(function(){
+                    var src = "Heros Win";
+                    defHealth = defHealth - Heroattack;
+                    HeroHealth = HeroHealth - defattack;
+                    
+                    $("#healthChosenV").html("Health: "+ defHealth);
+                    $("#healthChosen").html("Health: "+ HeroHealth);
+                    $("#charPowerChosen").html("Attack Power: "+Heroattack);
 
+                    if (defHealth < threshHold){
+                        $("#chosenImgV").replaceWith( '<img id="chosenImgV" src="assets/images/galacticEmpire.png" style="height: auto; width: 100%; float: left;">');
+                        $("#charChosenV").html("Heros Win! Pick your next enemy!");
+                        $("#healthChosenV").empty();
+                        $("#charPowerChosenV").empty();
+                        isClicked2 = true;
+                        HeroHealth = 1500 + defattack;
 
-}
+                        if (win){Heroattack = Heroattack + 60; win = false;}
 
+                        attack = false;
 
-
-}
+                    } else if (HeroHealth <= 0){
+                        
+                        $("#chosenImg").replaceWith('<img id="chosenImg" src="assets/images/jediOrder.png" style="height: auto; width: 100%; float: right;" >');
+                        $("#charChosen").html("Villans Win! Try again!");
+                        $("#healthChosen").empty();
+                        $("#charPowerChosen").empty();
+                        attack = false;
+                    }
+                    
+                });
+            }   
+        }
+    }
    
     
 
