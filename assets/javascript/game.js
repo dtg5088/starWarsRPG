@@ -15,8 +15,10 @@
 $(document).ready(function() {
 
     //prompts for game instructions 
-    alert("Welcome to the starwars RPG game");
-    alert("click on a character to begin playing");
+    swal("StarWars RPG", "Welcome to the starwars RPG game")
+        .then((value) => {
+        swal(`First pick a Hero to play as!`);
+        });
     
     //converting DOM elements 
     var maceWindu = $("#character1");
@@ -94,7 +96,7 @@ $(document).ready(function() {
         11: {
             name: "Asoka Tano",
             health: 1500,
-            attackPower: 300,
+            attackPower: 100,
             image:"assets/images/Ahsoka.jpg",
         },
         12: {
@@ -196,6 +198,12 @@ function pickCharacter(){
                     
                 }
                 //return [pickedHeroCharacter, HeroName, HeroHealth, Heroattack];
+                swal({
+                    title: "Hero Selected",
+                    text: "Now Pick a Villan to fight, look at the attack power and health before choosing!",
+                    icon: "success",
+                    buttons: true,
+                  })
         });
         console.log("this your characters power value before hitcounter function:  "+Heroattack);
         $('.villanCharacter').click(function(){
@@ -229,6 +237,12 @@ function pickCharacter(){
 
                 }
                 //return [pickedDefCharacter, defName, defHealth, defattack];
+                swal({
+                    title: "Villan Selected",
+                    text: "Now prepare to fight!",
+                    icon: "success",
+                    buttons: true,
+                  })
             });
             
         if(win){
@@ -241,6 +255,10 @@ function pickCharacter(){
 
             if (attack){
                 $( "#attackButton" ).click(function(){
+
+                   
+
+
                     var src = "Heros Win";
                     defHealth = defHealth - Heroattack;
                     HeroHealth = HeroHealth - defattack;
@@ -258,8 +276,14 @@ function pickCharacter(){
                         HeroHealth = 1500 + defattack;
 
                         if (win){Heroattack = Heroattack + 60; win = false;}
-
+                        
                         attack = false;
+                        swal({
+                            title: "HERO WINS!",
+                            text: "Now pick another Villan to fight! Player Gains + 60 attack power",
+                            icon: "success",
+                            buttons: true,
+                          })
 
                     } else if (HeroHealth <= 0){
                         
@@ -267,9 +291,19 @@ function pickCharacter(){
                         $("#charChosen").html("Villans Win! Try again!");
                         $("#healthChosen").empty();
                         $("#charPowerChosen").empty();
+                        
                         attack = false;
+                        swal({
+                            title: "HERO HAS BEEN DEFEATED",
+                            text: "Refresh to play again",
+                            icon: "error",
+                            buttons: true,
+                          })
                     }
                     
+                    $( ".toggle" ).effect( "shake" );
+                    $( ".toggle" ).effect( "shake" );
+
                 });
             }   
         }
